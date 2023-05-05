@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 599px) {
+  .mat-toolbar-multiple-rows {
+    min-height: 64px
+  }
+
+  .mat-toolbar-row, .mat-toolbar-single-row {
+    height: 64px
+  }
+}
