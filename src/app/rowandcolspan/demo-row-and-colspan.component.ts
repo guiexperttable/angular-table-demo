@@ -1,5 +1,12 @@
 import { Component } from "@angular/core";
-import { AreaModelArrayArray, ColumnDef, ColumnDefIf, Size, TableModelFactory, TableModelIf } from "@guiexpert/table";
+import {
+  AreaModelArrayOfArrays,
+  ColumnDef,
+  ColumnDefIf,
+  Size,
+  TableModelFactory,
+  TableModelIf
+} from "@guiexpert/table";
 import { DemoRowAndColspanAreaModel } from "./demo-row-and-colspan-area-model";
 
 @Component({
@@ -42,9 +49,9 @@ export class DemoRowAndColspanComponent {
     }
 
     this.tableModel = TableModelFactory.createByAreaModelsParam({
-      headerAreaModel: new AreaModelArrayArray("header", [labels], 34),
+      headerAreaModel: new AreaModelArrayOfArrays("header", [labels], 34),
       bodyAreaModel: new DemoRowAndColspanAreaModel("body", buf),
-      footerAreaModel: new AreaModelArrayArray("footer", footer, 34),
+      footerAreaModel: new AreaModelArrayOfArrays("footer", footer, 34),
       columnDefs
     });
   }
