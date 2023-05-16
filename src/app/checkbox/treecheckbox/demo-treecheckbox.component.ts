@@ -29,7 +29,6 @@ export class DemoTreecheckboxComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // TODO Fehler, wenn kein Promise, dann lässt sich keine Checkbox selektieren. Doppelte Events setzen alles wieder zurücl.
     Promise.resolve().then(() => {
       this.initialized = true;
     });
