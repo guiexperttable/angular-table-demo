@@ -35,14 +35,14 @@ import { debounceTime, takeWhile } from "rxjs";
 
 
 @Component({
-  selector: 'demo-columndef',
-  templateUrl: './demo-columndef.component.html',
-  styleUrls: ['./demo-columndef.component.css'],
+  selector: "demo-columndef",
+  templateUrl: "./demo-columndef.component.html",
+  styleUrls: ["./demo-columndef.component.css"]
 })
 export class DemoColumndefComponent implements OnInit, OnDestroy {
 
 
-  selectionModel = new SelectionModel('range', 'multi');
+  selectionModel = new SelectionModel("range", "multi");
 
   // Table options:
   tableOptions: TableOptionsIf = {
@@ -55,7 +55,7 @@ export class DemoColumndefComponent implements OnInit, OnDestroy {
     },
     autoRestoreOptions: {
       ...new AutoRestoreOptions<PersonIf>(),
-      getStorageKeyFn: () => 'demoColumndefComponent',
+      getStorageKeyFn: () => "demoColumndefComponent",
       autoRestoreCollapsedExpandedState: true,
       autoRestoreScrollPosition: true,
       autoRestoreSortingState: true,
@@ -66,37 +66,35 @@ export class DemoColumndefComponent implements OnInit, OnDestroy {
   };
   // Table model:
   tableModel?: TableModelIf;
-
+  filterText = "";
   // Column model:
   private columnDefs: ColumnDefIf[] = [
-    new ColumnDef('lastName', 'Last Name', px200),
-    new ColumnDef('preName', 'Pre Name', px120),
-    new ColumnDef('age', 'Age', px80, undefined, ColumnDef.bodyRenderer(new NumberCellRenderer())),
-    new ColumnDef('birth', 'Birthday', px100,
+    new ColumnDef("lastName", "Last Name", px200),
+    new ColumnDef("preName", "Pre Name", px120),
+    new ColumnDef("age", "Age", px80, undefined, ColumnDef.bodyRenderer(new NumberCellRenderer())),
+    new ColumnDef("birth", "Birthday", px100,
       undefined,
       Renderer.bodyRenderer(new DateToIntlDDMMYYYYCellRenderer())),
 
     ColumnDef.create({
-      property: 'gender',
-      headerLabel: ' ',
+      property: "gender",
+      headerLabel: " ",
       width: px50,
       bodyRenderer: new MaleFemaleToIconCellRenderer(),
       editable: TrueFn,
       getEditRenderer: () => new SelectCellRenderer([
-        new ValueLabel('female', '♀'),
-        new ValueLabel('male', '♂'),
+        new ValueLabel("female", "♀"),
+        new ValueLabel("male", "♂")
       ])
     }),
 
-    new ColumnDef('address.street', 'Strasse', px150),
-    new ColumnDef('address.number', 'Nr', px70),
-    new ColumnDef('address.zip', 'Zip', px60),
-    new ColumnDef('address.city', 'City', px120),
-    new ColumnDef('address.country', 'Country', px120),
-    new ColumnDef('id', 'ID', px60),
+    new ColumnDef("address.street", "Strasse", px150),
+    new ColumnDef("address.number", "Nr", px70),
+    new ColumnDef("address.zip", "Zip", px60),
+    new ColumnDef("address.city", "City", px120),
+    new ColumnDef("address.country", "Country", px120),
+    new ColumnDef("id", "ID", px60)
   ];
-  filterText = '';
-
   private tableApi?: TableApi;
   private filter$ = new EventEmitter<number>();
   private alive = true;
@@ -118,7 +116,7 @@ export class DemoColumndefComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.http
-      .get<PersonIf[]>('/assets/demodata/tree-persons.json')
+      .get<PersonIf[]>("/assets/demodata/tree-persons.json")
       .subscribe(this.onDataLoaded.bind(this));
 
     this.filter$
@@ -156,7 +154,7 @@ export class DemoColumndefComponent implements OnInit, OnDestroy {
   }
 
   private onDataLoaded(data: PersonIf[]) {
-    const tree = TableModelFactory.buildTreeRows<PersonIf>(data, 'friends');
+    const tree = TableModelFactory.buildTreeRows<PersonIf>(data, "friends");
     this.tableModel = TableModelFactory.buildByTypedRows<TreeRow<PersonIf>>(
       tree,
       this.columnDefs,
@@ -165,25 +163,24 @@ export class DemoColumndefComponent implements OnInit, OnDestroy {
       1
     );
     if (this.tableModel) {
-      this.tableModel.getBodyModel().setValue = this.setValue.bind(this);
+      // this.tableModel.getBodyModel().setValue = this.setValue.bind(this);
     }
   }
 
 
   private setValue(rowIndex: number, columnIndex: number, value: string): boolean {
-    const row: TreeRow<PersonIf> = this.tableModel?.getBodyRowByIndex(rowIndex);
-    const property = this.tableModel?.getColumnProperty(columnIndex);
-    let v: any = value;
-
-    if (property === "age") {
-      v = Number(value);
-      if (isNaN(v)) {
-        v = value;
+    if (this.tableModel) {
+      const property = this.tableModel.getColumnProperty(columnIndex);
+      let v: any = value;
+      if (property === "age") {
+        v = Number(value);
+        if (isNaN(v)) {
+          v = value;
+        }
       }
+      return this.tableModel.getBodyModel().setValue(rowIndex, columnIndex, v);
     }
-    // @ts-ignore
-    row.data[property] = v;
-    return true;
+    return false;
   }
 }
 
