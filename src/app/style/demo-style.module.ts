@@ -4,6 +4,7 @@ import {TableComponent} from "@guiexpert/angular-table";
 import {DemoStyleComponent} from "./demo-style.component";
 import {RouterModule} from "@angular/router";
 import {DemoUltraComponent} from "./ultra/demo-ultra.component";
+import { NgIf } from "@angular/common";
 
 @NgModule({
   declarations: [DemoStyleComponent, DemoUltraComponent],
@@ -19,6 +20,7 @@ import {DemoUltraComponent} from "./ultra/demo-ultra.component";
         component: DemoUltraComponent
       }
     ]),
+    NgIf
   ],
   providers: [],
   bootstrap: [DemoStyleComponent, DemoUltraComponent],

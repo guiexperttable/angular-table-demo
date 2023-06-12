@@ -20,9 +20,9 @@ export class DemoMultisizeComponent {
     }
 
     this.tableModel = TableModelFactory.createByAreaModelsParam({
-      headerAreaModel: new DemoMultisizeAreaModel('header', 2, colCount),
-      bodyAreaModel: new DemoMultisizeAreaModel('body', rowCount, colCount),
-      footerAreaModel: new DemoMultisizeAreaModel('footer', 2, colCount),
+      headerAreaModel: new DemoMultisizeAreaModel("header", 2, colCount),
+      bodyAreaModel: new DemoMultisizeAreaModel("body", rowCount, colCount),
+      footerAreaModel: new DemoMultisizeAreaModel("footer", 2, colCount),
       fixedLeftColumnCount: 2,
       fixedRightColumnCount: 1,
       defaultRowHeights: new DefaultRowHeights(0, 0, 0),

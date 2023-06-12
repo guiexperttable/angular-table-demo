@@ -162,25 +162,7 @@ export class DemoColumndefComponent implements OnInit, OnDestroy {
       1,
       1
     );
-    if (this.tableModel) {
-      // this.tableModel.getBodyModel().setValue = this.setValue.bind(this);
-    }
   }
 
-
-  private setValue(rowIndex: number, columnIndex: number, value: string): boolean {
-    if (this.tableModel) {
-      const property = this.tableModel.getColumnProperty(columnIndex);
-      let v: any = value;
-      if (property === "age") {
-        v = Number(value);
-        if (isNaN(v)) {
-          v = value;
-        }
-      }
-      return this.tableModel.getBodyModel().setValue(rowIndex, columnIndex, v);
-    }
-    return false;
-  }
 }
 

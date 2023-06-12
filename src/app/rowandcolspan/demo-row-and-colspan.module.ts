@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {TableComponent} from "@guiexpert/angular-table";
 import {DemoRowAndColspanComponent} from "./demo-row-and-colspan.component";
 import {RouterModule} from "@angular/router";
+import { NgIf } from "@angular/common";
 
 @NgModule({
   declarations: [DemoRowAndColspanComponent],
@@ -14,6 +15,7 @@ import {RouterModule} from "@angular/router";
         component: DemoRowAndColspanComponent
       }
     ]),
+    NgIf
   ],
   providers: [],
   bootstrap: [DemoRowAndColspanComponent],

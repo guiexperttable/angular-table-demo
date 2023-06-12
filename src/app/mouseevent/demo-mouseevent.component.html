@@ -5,6 +5,7 @@
   (mouseClicked)="onMouseClick($event)"
   (mouseMoved)="onMouseMoved($event)"
   [debounceMouseClickDelay]="166"
+  *ngIf="tableModel"
   [tableModel]="tableModel"
   class="table-div"></guiexpert-table>
 
