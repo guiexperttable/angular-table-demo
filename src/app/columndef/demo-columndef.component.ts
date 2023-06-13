@@ -5,7 +5,7 @@ import {
   CellRange,
   ColumnDef,
   ColumnDefIf,
-  DateToIntlDDMMYYYYCellRenderer,
+  DateToIntlDDMMYYYYCellRenderer, Factory,
   FalseFn,
   GeModelChangeEvent,
   MaleFemaleToIconCellRenderer,
@@ -162,6 +162,14 @@ export class DemoColumndefComponent implements OnInit, OnDestroy {
       1,
       1
     );
+    // TODO
+    // this.tableModel = Factory.createTableModel({
+    //   rows: tree,
+    //   columnDefs: this.columnDefs,
+    //   // this.tableOptions,
+    //   fixedLeftColumnCount: 1,
+    //   fixedRightColumnCount: 1
+    // });
   }
 
 }

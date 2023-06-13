@@ -2,38 +2,10 @@
 
   <div class="fill-remaining-space">
     <button
-      #menuTrigger="matMenuTrigger"
-      (mouseover)="menuTrigger.openMenu()"
-      [matMenuTriggerFor]="menu"
+      routerLink="/"
       mat-icon-button>
-      <mat-icon>menu</mat-icon>
+      <mat-icon>home</mat-icon>
     </button>
-
-    <mat-menu
-      #menu="matMenu"
-      [overlapTrigger]="false">
-
-      <div (mouseleave)="menuTrigger.closeMenu()">
-        <button mat-menu-item routerLink="/" routerLinkActive="active">
-          <mat-icon>home</mat-icon>
-          <span>Home</span>
-        </button>
-
-        <!--button mat-menu-item>
-          <mat-icon>people_outline</mat-icon>
-          <span>Connecting</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>videocam</mat-icon>
-          <span>Let's talk</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>exit_to_app</mat-icon>
-          <span>Logout</span>
-        </button-->
-      </div>
-
-    </mat-menu>
   </div>
 
   <div

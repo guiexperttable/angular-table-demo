@@ -1,12 +1,12 @@
-import {Component} from '@angular/core';
-import {DemoStyleColorCellRenderer} from "../demo-style-color-cell-renderer";
-import {DefaultRowHeights, TableModelFactory} from "@guiexpert/table";
-import {DemoStyleAreaModel} from "../demo-style-area-model";
+import { Component } from "@angular/core";
+import { DemoStyleColorCellRenderer } from "../demo-style-color-cell-renderer";
+import { DefaultRowHeights, Factory } from "@guiexpert/table";
+import { DemoStyleAreaModel } from "../demo-style-area-model";
 
 @Component({
-  selector: 'demo-ultra',
-  templateUrl: './demo-ultra.component.html',
-  styleUrls: ['./demo-ultra.component.css'],
+  selector: "demo-ultra",
+  templateUrl: "./demo-ultra.component.html",
+  styleUrls: ["./demo-ultra.component.css"]
 })
 export class DemoUltraComponent {
 
@@ -15,7 +15,7 @@ export class DemoUltraComponent {
   private readonly rowCount = 800;
 
 
-  tableModel = TableModelFactory.createByAreaModelsParam({
+  tableModel = Factory.createTableModel({
     bodyAreaModel: new DemoStyleAreaModel(this.rowCount, this.colCount, this.squareSize, new DemoStyleColorCellRenderer()),
     defaultRowHeights: new DefaultRowHeights(0, this.squareSize, 0),
     columnSizes: new Array(this.colCount).fill(this.squareSize)
