@@ -5,7 +5,8 @@ import {
   CellRange,
   ColumnDef,
   ColumnDefIf,
-  DateToIntlDDMMYYYYCellRenderer, Factory,
+  DateToIntlDDMMYYYYCellRenderer,
+  Factory,
   FalseFn,
   GeModelChangeEvent,
   MaleFemaleToIconCellRenderer,
@@ -155,21 +156,13 @@ export class DemoColumndefComponent implements OnInit, OnDestroy {
 
   private onDataLoaded(data: PersonIf[]) {
     const tree = TableModelFactory.buildTreeRows<PersonIf>(data, "friends");
-    this.tableModel = TableModelFactory.buildByTypedRows<TreeRow<PersonIf>>(
-      tree,
-      this.columnDefs,
-      this.tableOptions,
-      1,
-      1
-    );
-    // TODO
-    // this.tableModel = Factory.createTableModel({
-    //   rows: tree,
-    //   columnDefs: this.columnDefs,
-    //   // this.tableOptions,
-    //   fixedLeftColumnCount: 1,
-    //   fixedRightColumnCount: 1
-    // });
+    this.tableModel = Factory.createTableModel({
+      rows: tree,
+      columnDefs: this.columnDefs,
+      tableOptions: this.tableOptions,
+      fixedLeftColumnCount: 1,
+      fixedRightColumnCount: 1
+    });
   }
 
 }
