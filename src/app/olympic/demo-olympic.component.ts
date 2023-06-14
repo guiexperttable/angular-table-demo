@@ -1,8 +1,9 @@
-import {Component, EventEmitter, OnDestroy, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import { Component, EventEmitter, OnDestroy, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 import {
   ColumnDef,
   ColumnDefIf,
+  Factory,
   GeFilterService,
   px100,
   px200,
@@ -10,23 +11,22 @@ import {
   px80,
   SelectionModel,
   TableApi,
-  TableModelFactory,
   TableModelIf,
   TableOptions,
   TableOptionsIf
 } from "@guiexpert/table";
-import {OlympicIf} from './olympic.if';
-import {debounceTime, takeWhile} from 'rxjs';
+import { OlympicIf } from "./olympic.if";
+import { debounceTime, takeWhile } from "rxjs";
 
 
 @Component({
-  selector: 'demo-olympic',
-  templateUrl: './demo-olympic.component.html',
-  styleUrls: ['./demo-olympic.component.css'],
+  selector: "demo-olympic",
+  templateUrl: "./demo-olympic.component.html",
+  styleUrls: ["./demo-olympic.component.css"]
 })
 export class DemoOlympicComponent implements OnInit, OnDestroy {
 
-  selectionModel = new SelectionModel('row', 'multi');
+  selectionModel = new SelectionModel("row", "multi");
 
   // Table options:
   tableOptions: TableOptionsIf = {
@@ -42,7 +42,7 @@ export class DemoOlympicComponent implements OnInit, OnDestroy {
   };
   // Table model:
   tableModel?: TableModelIf;
-  filterText = 'xx +sh -35'; // try: 'xxx lamu'
+  filterText = "xx +sh -35"; // try: 'xxx lamu'
 
   private filterService = new GeFilterService();
 
@@ -57,7 +57,7 @@ export class DemoOlympicComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.http
-      .get<OlympicIf[]>('/assets/demodata/olympics.json')
+      .get<OlympicIf[]>("/assets/demodata/olympics.json")
       .subscribe(this.onDataLoaded.bind(this));
 
     this.filter$
@@ -66,7 +66,7 @@ export class DemoOlympicComponent implements OnInit, OnDestroy {
         debounceTime(400)
       )
       .subscribe(() => {
-        console.info('this.filterText', this.filterText);
+        console.info("this.filterText", this.filterText);
         this.tableApi?.externalFilterChanged();
       });
   }
@@ -109,27 +109,28 @@ export class DemoOlympicComponent implements OnInit, OnDestroy {
      */
   }
 
-  private onDataLoaded(data: OlympicIf[]) {
+  private onDataLoaded(rows: OlympicIf[]) {
     let rid = 0;
-    data.forEach(o => o.rid = rid++);
+    rows.forEach(o => o.rid = rid++);
 
     // Column model:
     const columnDefs: ColumnDefIf[] = [
-      new ColumnDef('rid', 'ID', px80),
-      new ColumnDef('ID', 'User ID', px80),
-      new ColumnDef('Name', 'Name', px200),
-      new ColumnDef('Sex', 'Sex', px60),
-      new ColumnDef('Age', 'Age', px60),
-      new ColumnDef('NOC', 'NOC', px60),
-      new ColumnDef('Year', 'Year', px80),
-      new ColumnDef('Season', 'Season', px100),
-      new ColumnDef('Medal', 'Medal', px100)
+      new ColumnDef("rid", "ID", px80),
+      new ColumnDef("ID", "User ID", px80),
+      new ColumnDef("Name", "Name", px200),
+      new ColumnDef("Sex", "Sex", px60),
+      new ColumnDef("Age", "Age", px60),
+      new ColumnDef("NOC", "NOC", px60),
+      new ColumnDef("Year", "Year", px80),
+      new ColumnDef("Season", "Season", px100),
+      new ColumnDef("Medal", "Medal", px100)
     ];
 
-    this.tableModel = TableModelFactory.buildByTypedRows<OlympicIf>(
-      data,
+    this.tableModel = Factory.createTableModel({
+      rows,
       columnDefs,
-      this.tableOptions);
+      tableOptions: this.tableOptions
+    });
   }
 
 }

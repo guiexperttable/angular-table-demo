@@ -1,25 +1,25 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import { Component, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 import {
   ColumnDef,
   ColumnDefIf,
+  Factory,
   px120,
   px150,
   px250,
   px50,
   TableApi,
-  TableModelFactory,
   TableModelIf,
   TableOptions,
   TableOptionsIf
 } from "@guiexpert/table";
-import {SimplePersonIf} from "../../objectarray/simple-person.if";
+import { SimplePersonIf } from "../../objectarray/simple-person.if";
 
 @Component({
-  selector: 'demo-idfilter',
-  templateUrl: './demo-idfilter.component.html',
-  styleUrls: ['./demo-idfilter.component.css'],
+  selector: "demo-idfilter",
+  templateUrl: "./demo-idfilter.component.html",
+  styleUrls: ["./demo-idfilter.component.css"]
 })
 export class DemoIdfilterComponent implements OnInit {
 
@@ -47,7 +47,7 @@ export class DemoIdfilterComponent implements OnInit {
 
   ngOnInit(): void {
     this.http
-      .get<SimplePersonIf[]>('/assets/demodata/persons1000.json')
+      .get<SimplePersonIf[]>("/assets/demodata/persons1000.json")
       .subscribe(this.onDataLoaded.bind(this));
   }
 
@@ -70,18 +70,18 @@ export class DemoIdfilterComponent implements OnInit {
   private onDataLoaded(data: SimplePersonIf[]) {
 
     const columnDefs: ColumnDefIf[] = [
-      new ColumnDef('firstName', 'First Name', px120),
-      new ColumnDef('lastName', 'Last Name'),
+      new ColumnDef("firstName", "First Name", px120),
+      new ColumnDef("lastName", "Last Name"),
       ColumnDef.create({
-        property: 'email',
+        property: "email",
         width: px250,
-        bodyClasses: ['ge-table-text-align-left']
+        bodyClasses: ["ge-table-text-align-left"]
       }),
-      new ColumnDef('ipAddress', 'IP', px150),
-      new ColumnDef('id', 'ID', px50),
+      new ColumnDef("ipAddress", "IP", px150),
+      new ColumnDef("id", "ID", px50)
     ];
 
-    this.tableModel = TableModelFactory.buildByTypedRowsParam<SimplePersonIf>({
+    this.tableModel = Factory.createTableModel({
       rows: data,
       columnDefs,
       tableOptions: this.tableOptions,

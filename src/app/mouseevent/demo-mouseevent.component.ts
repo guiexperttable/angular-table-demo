@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from "@angular/core";
-import { GeMouseEvent, TableModelFactory, TableModelIf } from "@guiexpert/table";
+import { Factory, GeMouseEvent, TableModelFactory, TableModelIf } from "@guiexpert/table";
 import { DemoMouseeventAreaModel } from "./demo-mouseevent-area-model";
 
 @Component({
@@ -21,12 +21,13 @@ export class DemoMouseeventComponent {
     for (let i = 0; i < this.colCount; i++) {
       columnSizes.push(60 + (4 * i) % 60);
     }
-    this.tableModel = TableModelFactory.createByAreaModelsParam({
+    this.tableModel = Factory.createTableModel({
       headerAreaModel: new DemoMouseeventAreaModel(2, columnSizes.length),
       bodyAreaModel: new DemoMouseeventAreaModel(200, columnSizes.length),
       footerAreaModel: new DemoMouseeventAreaModel(2, columnSizes.length),
       columnCount: columnSizes.length,
-      overridingColumnWidth: 100
+      overridingColumnWidth: -1,
+      columnSizes
     });
     console.info(this.tableModel);
   }
