@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { SimplePersonIf } from "./simple-person.if";
 import { TableModelIf, TableOptions, TableOptionsIf } from "@guiexpert/table";
-import { Factory } from "@guiexpert/table";
+import { TableFactory } from "@guiexpert/table";
 
 @Component({
   selector: "demo-objectarray",
@@ -35,7 +35,7 @@ export class DemoObjectarrayComponent implements OnInit {
 
   private onDataLoaded(rows: SimplePersonIf[]) {
     const properties = ["id", "firstName", "lastName", "email", "gender", "ipAddress"];
-    this.tableModel = Factory.createTableModel({
+    this.tableModel = TableFactory.createTableModel({
       properties,
       rows,
       defaultRowHeights: this.tableOptions.defaultRowHeights

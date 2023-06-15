@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import {
   ColumnDef,
   ColumnDefIf,
-  Factory,
+  TableFactory,
   GeFilterService,
   px100,
   px200,
@@ -126,7 +126,7 @@ export class DemoOlympicComponent implements OnInit, OnDestroy {
       new ColumnDef("Medal", "Medal", px100)
     ];
 
-    this.tableModel = Factory.createTableModel({
+    this.tableModel = TableFactory.createTableModel({
       rows,
       columnDefs,
       tableOptions: this.tableOptions

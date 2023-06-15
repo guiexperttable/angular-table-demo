@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import {
   ColumnDef,
   ColumnDefIf,
-  Factory,
+  TableFactory,
   px120,
   px150,
   px250,
@@ -95,7 +95,7 @@ export class DemoComponentrendererComponent implements OnInit, OnDestroy {
       })
     ];
 
-    this.tableModel = Factory.createTableModel({
+    this.tableModel = TableFactory.createTableModel({
       rows: data,
       columnDefs,
       tableOptions: this.tableOptions,

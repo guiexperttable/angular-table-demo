@@ -6,7 +6,7 @@ import {
   allRight,
   bodyLeft,
   ColumnDef,
-  ColumnDefIf, Factory,
+  ColumnDefIf, TableFactory,
   FalseFn,
   MaleFemaleToIconCellRenderer,
   px100,
@@ -20,7 +20,7 @@ import {
   Renderer,
   Size,
   TableApi,
-  TableModelFactory,
+  TreeFactory,
   TableModelIf,
   TableOptions,
   TableOptionsIf,
@@ -116,7 +116,7 @@ export class DemoHeaderdblclickComponent implements OnInit {
       }
     }
 
-    this.tableModel = Factory.createTableModel({
+    this.tableModel = TableFactory.createTableModel({
       rows: data,
       columnDefs,
       tableOptions: this.tableOptions,

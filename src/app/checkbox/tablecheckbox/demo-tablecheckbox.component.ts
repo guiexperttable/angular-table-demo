@@ -4,12 +4,12 @@ import {HttpClient} from "@angular/common/http";
 import {
   CheckboxColumn,
   ColumnDef,
-  ColumnDefIf, Factory,
+  ColumnDefIf, TableFactory,
   px120,
   px150,
   px250,
   px50,
-  TableModelFactory,
+  TreeFactory,
   TableModelIf,
   TableOptions,
   TableOptionsIf
@@ -65,7 +65,7 @@ export class DemoTablecheckboxComponent implements OnInit {
       new ColumnDef('id', 'ID', px50),
     ];
 
-    this.tableModel = Factory.createTableModel({
+    this.tableModel = TableFactory.createTableModel({
       rows: data,
       columnDefs,
       tableOptions: this.tableOptions,

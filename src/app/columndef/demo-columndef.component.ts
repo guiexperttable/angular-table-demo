@@ -6,7 +6,7 @@ import {
   ColumnDef,
   ColumnDefIf,
   DateToIntlDDMMYYYYCellRenderer,
-  Factory,
+  TableFactory,
   FalseFn,
   GeModelChangeEvent,
   MaleFemaleToIconCellRenderer,
@@ -23,7 +23,7 @@ import {
   SelectCellRenderer,
   SelectionModel,
   TableApi,
-  TableModelFactory,
+  TreeFactory,
   TableModelIf,
   TableOptions,
   TableOptionsIf,
@@ -155,8 +155,8 @@ export class DemoColumndefComponent implements OnInit, OnDestroy {
   }
 
   private onDataLoaded(data: PersonIf[]) {
-    const tree = TableModelFactory.buildTreeRows<PersonIf>(data, "friends");
-    this.tableModel = Factory.createTableModel({
+    const tree = TreeFactory.buildTreeRows<PersonIf>(data, "friends");
+    this.tableModel = TableFactory.createTableModel({
       rows: tree,
       columnDefs: this.columnDefs,
       tableOptions: this.tableOptions,

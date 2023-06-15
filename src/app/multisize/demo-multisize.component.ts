@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { DefaultRowHeights, Factory, TableModelIf } from "@guiexpert/table";
+import { DefaultRowHeights, TableFactory, TableModelIf } from "@guiexpert/table";
 import { DemoMultisizeAreaModel } from "./demo-multisize-area-model";
 
 @Component({
@@ -19,7 +19,7 @@ export class DemoMultisizeComponent {
       columnSizes[i] = 50 + Math.floor(300 * Math.random());
     }
 
-    this.tableModel = Factory.createTableModel({
+    this.tableModel = TableFactory.createTableModel({
       headerAreaModel: new DemoMultisizeAreaModel("header", 2, colCount),
       bodyAreaModel: new DemoMultisizeAreaModel("body", rowCount, colCount),
       footerAreaModel: new DemoMultisizeAreaModel("footer", 2, colCount),
