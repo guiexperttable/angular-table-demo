@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 
 import {
   CheckboxBooleanPropertyCellRenderer,
-  CheckboxColumn,
+  CheckboxColumnDef,
   ColumnDef,
   ColumnDefIf,
   px120,
@@ -60,7 +60,7 @@ export class DemoTablecheckboxComponent implements OnInit {
       //   width: px40,
       //   bodyRenderer: new CheckboxBooleanPropertyCellRenderer<SimplePersonIf>("checked", true)
       // }),
-      new CheckboxColumn(), //  <--- short, no 'checked' property needed, bodyAreaModel.rowSelectionModel used instead.
+      new CheckboxColumnDef(), //  <--- short, no 'checked' property needed, bodyAreaModel.rowSelectionModel used instead.
       new ColumnDef("firstName", "First Name", px120),
       new ColumnDef("lastName", "Last Name"),
       ColumnDef.create({
