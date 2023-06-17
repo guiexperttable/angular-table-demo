@@ -1,25 +1,27 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import { Component, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 import {
+  CheckboxBooleanPropertyCellRenderer,
   CheckboxColumn,
   ColumnDef,
-  ColumnDefIf, TableFactory,
+  ColumnDefIf,
   px120,
   px150,
   px250,
+  px40,
   px50,
-  TreeFactory,
+  TableFactory,
   TableModelIf,
   TableOptions,
   TableOptionsIf
 } from "@guiexpert/table";
-import {SimplePersonIf} from "../../objectarray/simple-person.if";
+import { SimplePersonIf } from "../../objectarray/simple-person.if";
 
 @Component({
-  selector: 'demo-tablecheckbox',
-  templateUrl: './demo-tablecheckbox.component.html',
-  styleUrls: ['./demo-tablecheckbox.component.css'],
+  selector: "demo-tablecheckbox",
+  templateUrl: "./demo-tablecheckbox.component.html",
+  styleUrls: ["./demo-tablecheckbox.component.css"]
 })
 export class DemoTablecheckboxComponent implements OnInit {
 
@@ -42,27 +44,32 @@ export class DemoTablecheckboxComponent implements OnInit {
 
   ngOnInit(): void {
     this.http
-      .get<SimplePersonIf[]>('/assets/demodata/persons1000.json')
+      .get<SimplePersonIf[]>("/assets/demodata/persons1000.json")
       .subscribe(this.onDataLoaded.bind(this));
   }
 
   onCheckboxChanged(evt: any[]) {
-    console.info('onCheckboxChanged  evt:', evt);
+    console.info("onCheckboxChanged  evt:", evt);
   }
 
   private onDataLoaded(data: SimplePersonIf[]) {
 
     const columnDefs: ColumnDefIf[] = [
-      new CheckboxColumn(), //  <---
-      new ColumnDef('firstName', 'First Name', px120),
-      new ColumnDef('lastName', 'Last Name'),
+      // ColumnDef.create({
+      //   property: "checked",
+      //   width: px40,
+      //   bodyRenderer: new CheckboxBooleanPropertyCellRenderer<SimplePersonIf>("checked", true)
+      // }),
+      new CheckboxColumn(), //  <--- short, no 'checked' property needed, bodyAreaModel.rowSelectionModel used instead.
+      new ColumnDef("firstName", "First Name", px120),
+      new ColumnDef("lastName", "Last Name"),
       ColumnDef.create({
-        property: 'email',
+        property: "email",
         width: px250,
-        bodyClasses: ['ge-table-text-align-left']
+        bodyClasses: ["ge-table-text-align-left"]
       }),
-      new ColumnDef('ipAddress', 'IP', px150),
-      new ColumnDef('id', 'ID', px50),
+      new ColumnDef("ipAddress", "IP", px150),
+      new ColumnDef("id", "ID", px50)
     ];
 
     this.tableModel = TableFactory.createTableModel({
