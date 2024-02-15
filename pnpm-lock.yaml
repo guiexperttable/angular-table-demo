@@ -39,8 +39,8 @@ dependencies:
     specifier: ^17.1.4
     version: 17.1.4(@angular/common@17.2.1)(@angular/core@17.2.1)
   '@guiexpert/demo-table-models':
-    specifier: ^1.0.14
-    version: 1.0.14
+    specifier: ^1.0.15
+    version: 1.0.15
   '@guiexpert/table':
     specifier: ^1.1.20
     version: 1.1.21
@@ -2149,15 +2149,21 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@guiexpert/demo-table-models@1.0.14:
-    resolution: {integrity: sha512-FpOsiIvl1OyHTmaGUB3a8yt4/BSNDZttLak+aly8FwO8vZ14tke2IQ3MK2EIyvGSFo8qanEf2lOd32mhmx3dgQ==}
+  /@guiexpert/demo-table-models@1.0.15:
+    resolution: {integrity: sha512-WHNptkOPgvzRO+6OZzUYpqQGDKSXjF7H7AsENCTHrtP5xoiyNtUwBQMSETpLUGdh9vMsu+OsLoweL0oxX7EUyA==}
     dependencies:
-      '@guiexpert/table': 1.1.21
+      '@guiexpert/table': 1.1.22
       tslib: 2.6.2
     dev: false
 
   /@guiexpert/table@1.1.21:
     resolution: {integrity: sha512-I6nouIrTTgQUzF8G8OKlTnXJiSVwiPdwrNC0UXYGKY7YjCHMEHiUVaflpRdW+A/zET5l7IqGHviDDA/UpEQ5QQ==}
+    dependencies:
+      tslib: 2.6.2
+    dev: false
+
+  /@guiexpert/table@1.1.22:
+    resolution: {integrity: sha512-pDrbmBMvaVeKRd33fMfaJHVGRiE5hRoSoJb99P3cDEmTO4k79zbLveyo+R6K2t6YVKBF/Dl0mp+q5iAIv/YG+Q==}
     dependencies:
       tslib: 2.6.2
     dev: false
