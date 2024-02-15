@@ -15,6 +15,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatMenuModule} from "@angular/material/menu";
 import {SocketIoConfig, SocketIoModule} from "ngx-socket-io";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 const config: SocketIoConfig = {
@@ -45,7 +46,9 @@ const config: SocketIoConfig = {
     MatToolbarModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [
     AppComponent
   ],
