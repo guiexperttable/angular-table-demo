@@ -43,7 +43,7 @@ export class DemoMultisizeAreaModel extends AbstractAreaModel<number> {
   }
 
 
-  externalFilterChanged<T>(predictFn: FilterFunction<T>): void {
+  externalFilterChanged<T>(_predictFn: FilterFunction<T>): void {
     // nothing
   }
 
