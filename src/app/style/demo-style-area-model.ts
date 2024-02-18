@@ -20,9 +20,6 @@ export class DemoStyleAreaModel extends AbstractAreaModel<string[]> {
     }
   }
 
-  // externalFilterChanged(predictFn: FilterFunction<any>): void {
-  //   // do nothing
-  // }
 
   getColumnCount(): number {
     if (this.arr?.length) {
@@ -63,7 +60,7 @@ export class DemoStyleAreaModel extends AbstractAreaModel<string[]> {
   }
 
 
-  externalFilterChanged<T>(predictFn: FilterFunction<T>): void {
+  externalFilterChanged<T>(_predictFn: FilterFunction<T>): void {
     // nothing
   }
 
