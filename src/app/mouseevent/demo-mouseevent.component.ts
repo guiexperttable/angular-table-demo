@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from "@angular/core";
-import { TableFactory, GeMouseEvent, TreeFactory, TableModelIf } from "@guiexpert/table";
+import { TableFactory, GeMouseEvent, TableModelIf } from "@guiexpert/table";
 import { DemoMouseeventAreaModel } from "./demo-mouseevent-area-model";
 
 @Component({
