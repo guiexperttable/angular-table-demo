@@ -2,14 +2,12 @@ import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
 import {
-  CheckboxBooleanPropertyCellRenderer,
   CheckboxColumnDef,
   ColumnDef,
   ColumnDefIf,
   px120,
   px150,
   px250,
-  px40,
   px50,
   TableFactory,
   TableModelIf,
