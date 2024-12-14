@@ -94,7 +94,7 @@ export class DemoColumndefComponent implements OnInit, OnDestroy {
     new ColumnDef("address.zip", "Zip", px60),
     new ColumnDef("address.city", "City", px120),
     new ColumnDef("address.country", "Country", px120),
-    new ColumnDef("id", "ID", px60)
+    new ColumnDef("id", "ID", px80)
   ];
   private tableApi?: TableApi;
   private filter$ = new EventEmitter<number>();
@@ -167,6 +167,10 @@ export class DemoColumndefComponent implements OnInit, OnDestroy {
 
   onCopyClicked() {
     this.tableApi?.copyToClipboard().then(console.info);
+  }
+
+  onDownloadExcelClicked() {
+    this.tableApi?.downloadExcel();
   }
 }
 
