@@ -1,5 +1,5 @@
 export interface SimplePersonIf {
-  checked: boolean,
+  checked: boolean;
   id: number;
   firstName: string;
   lastName: string;
