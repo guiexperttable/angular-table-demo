@@ -36,14 +36,14 @@ dependencies:
     specifier: ^17.0.0
     version: 17.2.1(@angular/common@17.2.1)(@angular/core@17.2.1)(@angular/platform-browser@17.2.1)(rxjs@7.8.1)
   '@guiexpert/angular-table':
-    specifier: ^17.1.60
-    version: 17.1.60(@angular/common@17.2.1)(@angular/core@17.2.1)
+    specifier: ^17.1.61
+    version: 17.1.61(@angular/common@17.2.1)(@angular/core@17.2.1)
   '@guiexpert/demo-table-models':
     specifier: ^1.0.21
     version: 1.0.21
   '@guiexpert/table':
-    specifier: ^1.1.60
-    version: 1.1.60
+    specifier: ^1.1.61
+    version: 1.1.61
   ngx-socket-io:
     specifier: ^4.1.0
     version: 4.6.1(@angular/common@17.2.1)(@angular/core@17.2.1)(rxjs@7.8.1)
@@ -2141,8 +2141,8 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@guiexpert/angular-table@17.1.60(@angular/common@17.2.1)(@angular/core@17.2.1):
-    resolution: {integrity: sha512-PL4EOYo8e9786ekVuDuzazSGSGLL64bbRfFxsOtduMq2e5VESn7uqDAOIZizeT4D4loDlj5g+j1m3iwOtCrW4w==}
+  /@guiexpert/angular-table@17.1.61(@angular/common@17.2.1)(@angular/core@17.2.1):
+    resolution: {integrity: sha512-SapF1VcGIYa7iKeotP64r7dHCAFGpYTv3GlDxGZmz7v9w2vxlTPo2MtzwAq1p73PpAB9Hs6FLMkkUEUIYm0/VQ==}
     peerDependencies:
       '@angular/common': ^17.1.1
       '@angular/core': ^17.1.1
@@ -2155,12 +2155,12 @@ packages:
   /@guiexpert/demo-table-models@1.0.21:
     resolution: {integrity: sha512-iidXoJsDndH0PPysaDW2yDXWcYO2vnt2EEllBLQXAHhxcPGMvVZP9Y/pfCN63J4DfMJiYHKZqYb/c9V0MomVdg==}
     dependencies:
-      '@guiexpert/table': 1.1.60
+      '@guiexpert/table': 1.1.61
       tslib: 2.6.2
     dev: false
 
-  /@guiexpert/table@1.1.60:
-    resolution: {integrity: sha512-S2+Qg95csNSwzyuVHtR6KHpkWc9f2smyD6B+uDXLyc6cX09XKRiMXxao1BpuzWf8ukDxxu9COPIDelWJnG36dA==}
+  /@guiexpert/table@1.1.61:
+    resolution: {integrity: sha512-ap2MC2pu+IlqR8gt2RHYmY0J8QtcLdHVg9OHmWHxjms+KajYf9rAoc6u7+kl0duZn9pF/+/oFxh4xrWjjyvOaA==}
     dependencies:
       tslib: 2.6.2
     dev: false
