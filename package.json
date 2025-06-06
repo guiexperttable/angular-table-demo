@@ -1,6 +1,6 @@
 {
   "name": "angular-table-demo",
-  "version": "1.1.62",
+  "version": "1.1.64",
   "scripts": {
     "i": "pnpm i",
     "ng": "ng",
@@ -21,8 +21,8 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
-    "@guiexpert/angular-table": "^17.1.62",
-    "@guiexpert/table": "^1.1.62",
+    "@guiexpert/angular-table": "^17.1.64",
+    "@guiexpert/table": "^1.1.64",
     "@guiexpert/demo-table-models": "^1.0.21",
     "ngx-socket-io": "^4.1.0",
     "rxjs": "~7.8.0",
