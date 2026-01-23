@@ -67,6 +67,10 @@ const routes: Routes = [
     loadChildren: () => import("./cellselection/demo-cellselection.module").then(m => m.DemoCellselectionModule)
   },
   {
+    path: "demo",
+    loadChildren: () => import("./covergrid/demo-cover-grid.module").then(m => m.DemoCoverGridModule)
+  },
+  {
     path: "**", redirectTo: "welcome"
   }
 ];
