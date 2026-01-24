@@ -33,7 +33,15 @@ export class DemoCoverGridComponent implements OnInit, OnDestroy {
 
   @ViewChild('viewportdiv', { static: true }) parentDiv: ElementRef | undefined;
 
-  thumbsDim: ThumbsDim = new ThumbsDim(200, 300);
+
+  thumbsDims: ThumbsDim[] = [
+    new ThumbsDim(100, 150),
+    new ThumbsDim(200, 300),
+    new ThumbsDim(400, 600)
+  ];
+  thumbsDim: ThumbsDim = this.thumbsDims[1];
+
+
   tableOptions: TableOptionsIf = {
     ...new TableOptions(),
     hoverColumnVisible: false,
@@ -116,6 +124,15 @@ export class DemoCoverGridComponent implements OnInit, OnDestroy {
       this.tableModel.setParentWidth(this.width);
       this.tableModel.bodyModel.width = this.width;
 
+      this.tableModel.recalcHeightAndPadding();
+      this.tableApi?.repaintHard();
+    }
+  }
+
+  onDimensionChanged() {
+    if (this.tableModel) {
+      this.tableModel.bodyModel.coverWidth = this.thumbsDim.width;
+      this.tableModel.bodyModel.coverHeight = this.thumbsDim.height;
       this.tableModel.recalcHeightAndPadding();
       this.tableApi?.repaintHard();
     }

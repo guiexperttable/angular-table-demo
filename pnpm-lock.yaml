@@ -39,14 +39,14 @@ importers:
         specifier: ^17.0.0
         version: 17.3.12(@angular/common@17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10))(rxjs@7.8.2))(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10))(@angular/platform-browser@17.3.12(@angular/animations@17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10)))(@angular/common@17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10))(rxjs@7.8.2))(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10)))(rxjs@7.8.2)
       '@guiexpert/angular-table':
-        specifier: ^17.1.82
-        version: 17.1.82(@angular/common@17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10))(rxjs@7.8.2))(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10))
+        specifier: ^17.1.83
+        version: 17.1.83(@angular/common@17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10))(rxjs@7.8.2))(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10))
       '@guiexpert/demo-table-models':
         specifier: ^1.0.21
         version: 1.1.81
       '@guiexpert/table':
-        specifier: ^1.1.82
-        version: 1.1.82
+        specifier: ^1.1.83
+        version: 1.1.83
       ngx-socket-io:
         specifier: ^4.1.0
         version: 4.10.0(@angular/common@17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10))(rxjs@7.8.2))(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10))(rxjs@7.8.2)
@@ -1062,8 +1062,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@guiexpert/angular-table@17.1.82':
-    resolution: {integrity: sha512-wvJNlSOIKUIX3VtIdta50eEZ68BphvqDfYf/z6/yhdvpd3DriRbePqJeDoHbNHDZ34z9YAjtln0MeJdL/fen9Q==}
+  '@guiexpert/angular-table@17.1.83':
+    resolution: {integrity: sha512-yj8GsEUJ+ocKDHF0ZojdYNfylY78iI0oQ15Ca3XIU13/Qf1qSbceAaedS3IVtn5Ez4dj6mYTBOSYfUvEtb2hOw==}
     peerDependencies:
       '@angular/common': ^17.1.1
       '@angular/core': ^17.1.1
@@ -1071,8 +1071,8 @@ packages:
   '@guiexpert/demo-table-models@1.1.81':
     resolution: {integrity: sha512-XHpi1VerlIstca9X82H1LMHyQHB60iAYMqvFdT0T9DX6ooM5U3eWhooczDaTwNzWa2+2VjaBADWpZzUXB3rWJA==}
 
-  '@guiexpert/table@1.1.82':
-    resolution: {integrity: sha512-+jGE/dbZnyqAsMMaZYqCogLNwAg0HQIrg9EvOWk+Rq4hj9U3L/QAG02foipwM4PuS4i2D7q/MALIAYaih3yrMg==}
+  '@guiexpert/table@1.1.83':
+    resolution: {integrity: sha512-A4F5egly+qauDeOXjdUu3qtdjhaq+R7ge3YwqBpe6nQEP64pibRT7c8zgkkIyOWys4+xYSgJtPMq0LUnHONQuw==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -5318,7 +5318,7 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@guiexpert/angular-table@17.1.82(@angular/common@17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10))(rxjs@7.8.2))(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10))':
+  '@guiexpert/angular-table@17.1.83(@angular/common@17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10))(rxjs@7.8.2))(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10))':
     dependencies:
       '@angular/common': 17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.10))(rxjs@7.8.2)
       '@angular/core': 17.3.12(rxjs@7.8.2)(zone.js@0.14.10)
@@ -5326,10 +5326,10 @@ snapshots:
 
   '@guiexpert/demo-table-models@1.1.81':
     dependencies:
-      '@guiexpert/table': 1.1.82
+      '@guiexpert/table': 1.1.83
       tslib: 2.8.1
 
-  '@guiexpert/table@1.1.82':
+  '@guiexpert/table@1.1.83':
     dependencies:
       tslib: 2.8.1
 

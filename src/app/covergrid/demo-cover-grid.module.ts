@@ -9,6 +9,7 @@ import {CommonModule} from "@angular/common";
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {FormsModule} from "@angular/forms";
+import { MatOption, MatSelect } from '@angular/material/select';
 
 @NgModule({
   declarations: [DemoCoverGridComponent],
@@ -18,13 +19,15 @@ import {FormsModule} from "@angular/forms";
     TableComponent,
     RouterModule.forChild([
       {
-        path: "covergrid",
+        path: 'covergrid',
         component: DemoCoverGridComponent
       }
     ]),
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
+    MatSelect,
+    MatOption
 
   ],
   providers: [],
