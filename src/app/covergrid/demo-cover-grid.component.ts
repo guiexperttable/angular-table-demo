@@ -44,6 +44,16 @@ export class DemoCoverGridComponent implements OnInit, OnDestroy {
 
   tableOptions: TableOptionsIf = {
     ...new TableOptions(),
+
+    horizontalBorderVisible: false,
+    verticalBorderVisible: false,
+    footerSeparatorBorderVisible: false,
+    headerSeparatorBorderVisible: false,
+    fixedEastSeparatorBorderVisible: false,
+    fixedWestSeparatorBorderVisible: false,
+    tableTopBorderVisible: false,
+    tableBottomBorderVisible: false,
+
     hoverColumnVisible: false,
     hoverRowVisible: false,
     defaultRowHeights: {
